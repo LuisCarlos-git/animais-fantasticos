@@ -1,0 +1,28 @@
+.js-accordion-effect dd {
+  display: none;
+}
+
+.js-accordion-effect dt::after {
+  content: "⬎";
+  margin-left: 10px;
+}
+
+.js-accordion-effect dt.active::after {
+  content: " ⬏";
+}
+
+.js-accordion-effect dd.active {
+  display: block;
+  animation: show 0.3s ease-out;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
