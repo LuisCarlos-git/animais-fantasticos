@@ -1,17 +1,17 @@
-.js-accordion-effect dd {
+[data-anima="accordion"] dd {
   display: none;
 }
 
-.js-accordion-effect dt::after {
+[data-anima="accordion"] dt::after {
   content: "⬎";
   margin-left: 10px;
 }
 
-.js-accordion-effect dt.active::after {
+[data-anima="accordion"] dt.active::after {
   content: " ⬏";
 }
 
-.js-accordion-effect dd.active {
+[data-anima="accordion"] dd.active {
   display: block;
   animation: show 0.3s ease-out;
 }

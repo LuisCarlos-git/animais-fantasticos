@@ -1,22 +1,26 @@
-const internalLinks = document.querySelectorAll(".js-menu li a[href^='#']");
+export default function initScroll() {
+  const internalLinks = document.querySelectorAll(
+    "[data-menu='menu'] li a[href^='#']"
+  );
 
-function smoothScroll(e) {
-  e.preventDefault();
+  function smoothScroll(e) {
+    e.preventDefault();
 
-  const id = e.target.getAttribute("href");
-  const target = document.querySelector(id).offsetTop;
+    const id = e.target.getAttribute("href");
+    const target = document.querySelector(id).offsetTop;
 
-  // forma alternativa
-  // const target = document.querySelector(id)
-  // target.scrollintoView({
-  //   behavior: 'smooth',
-  //   block: 'start'
-  // })
+    // forma alternativa
+    // const target = document.querySelector(id)
+    // target.scrollintoView({
+    //   behavior: 'smooth',
+    //   block: 'start'
+    // })
 
-  window.scrollTo({
-    top: target,
-    behavior: "smooth",
-  });
+    window.scrollTo({
+      top: target,
+      behavior: "smooth",
+    });
+  }
+
+  internalLinks.forEach((item) => item.addEventListener("click", smoothScroll));
 }
-
-internalLinks.forEach((item) => item.addEventListener("click", smoothScroll));
