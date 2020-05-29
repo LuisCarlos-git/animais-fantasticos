@@ -20,7 +20,7 @@
   z-index: 999;
 }
 
-[data-menu="drop-down"].active .menu-drop-down {
+[data-menu="drop-down"]:hover .menu-drop-down {
   visibility: visible;
   opacity: 1;
   transform: translate3d(0, 0, 0);
